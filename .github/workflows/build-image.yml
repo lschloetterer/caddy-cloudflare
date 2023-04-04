@@ -1,6 +1,7 @@
 name: build image
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -15,6 +16,8 @@ jobs:
   build-image:
     runs-on: ubuntu-22.04
     steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
     - name: Retrieve image version
       run: echo "IMAGE_NAME_AND_VERSION=$IMAGE_NAME:$(head -1 Dockerfile | grep -oP '(?<=caddy:).*?(?=-builder)')" >> $GITHUB_ENV
     - name: Set up QEMU

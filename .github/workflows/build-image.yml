@@ -23,7 +23,7 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v3
     - name: Retrieve image version
-      run: echo "IMAGE_NAME_AND_VERSION=$IMAGE_NAME:$(head -1 Dockerfile | grep -oP '(?<=caddy:).*?(?=-builder)')" >> $GITHUB_ENV
+      run: echo "IMAGE_VERSION=$(head -1 Dockerfile | grep -oP '(?<=caddy:).*?(?=-builder)')" >> $GITHUB_ENV
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     - name: Set up Docker Buildx
@@ -39,4 +39,6 @@ jobs:
       with:
         platforms: ${{ env.PLATFORMS }}
         push: true
-        tags: ${{ env.IMAGE_NAME_AND_VERSION }}
+        tags: |
+          ${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
+          ${{ env.IMAGE_NAME }}:latest

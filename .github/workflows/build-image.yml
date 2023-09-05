@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Retrieve image version
       run: echo "IMAGE_VERSION=$(head -1 Dockerfile | grep -oP '(?<=caddy:).*?(?=-builder)')" >> $GITHUB_ENV
     - name: Set up QEMU

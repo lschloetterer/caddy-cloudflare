@@ -9,6 +9,11 @@
       "matchPackageNames": ["caddy"],
       "automerge": true,
       "ignoreTests": true
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchPackagePrefixes": ["docker/"],
+      "groupName": "docker-actions"
     }
   ]
 }

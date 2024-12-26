@@ -5,7 +5,7 @@ Version numbers are copied from upstream.
 
 Image details:
 - Uses *alpine* image flavor
-- *ARMv7* architecture (e.g. Raspberry Pi)
+- *x64* and *ARMv7* architecture (e.g. Raspberry Pi)
 
 Pull with this image name: 
 ```

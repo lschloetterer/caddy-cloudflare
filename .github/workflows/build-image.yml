@@ -14,7 +14,7 @@ permissions:
 
 env:
   IMAGE_NAME: ghcr.io/${{ github.repository }}
-  PLATFORMS: linux/arm/v7
+  PLATFORMS: linux/amd64,linux/arm/v7
 
 jobs:
   build-image:

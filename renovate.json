@@ -3,7 +3,8 @@
   "extends": [
     "config:recommended",
     "docker:pinDigests",
-    "group:allDigest"
+    "group:allDigest",
+    "schedule:daily"
   ],
   "packageRules": [
     {
